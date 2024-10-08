@@ -6,7 +6,7 @@
         <div class="justify-items-center col-span-6">
         <x-comunidad.navigation />
         </div>
-        <div class="flex flex-col gap-2 col-span-3">
+        <div class="flex  gap-4 col-span-3">
         <x-comunidad.accesos />
         </div>
     </header>

@@ -1,5 +1,6 @@
 @props([
     'posts' => $posts,
+    'exc_limite' => 200,
     'dts' =>[
         [
             'ico'=>'ti-brand-laravel',
@@ -51,7 +52,7 @@
                                 <h4 class="text-gray-900 text-lg font-medium leading-8">{{ $post->title }}</h4>
                                 </a>
                             </div>
-                            <p class="text-gray-400 text-xs font-normal leading-5">{{ Str::limit($post->content,200,' ( ...Mas)') }}</p>
+                            <p class="text-gray-400 text-xs font-normal leading-5">{!! Str::limit($post->excerpt,$exc_limite,' ( ...Mas)') !!}</p>
                         </div>
 
                         <a href="" class="w-full px-3.5 py-2 rounded-bl-lg rounded-br-lg shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)] border-l border-r border-b border-gray-200 justify-center items-center flex">
