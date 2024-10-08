@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\belongsToMany;
 
 class Post extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function categories():BelongsToMany
+    public function categories():belongsToMany
     {
-       return $this->belongsTo(Category::class);
+       return $this->belongsToMany(Category::class)->withPivot('user_id');
     }
+
 }
