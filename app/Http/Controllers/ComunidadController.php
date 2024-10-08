@@ -11,7 +11,6 @@ class ComunidadController extends Controller
     public function index()
     {
        $posts = Post::all();
-      // $categorias = Category::all();
        return view('components.comunidad.index',compact('posts'));
     }
 
