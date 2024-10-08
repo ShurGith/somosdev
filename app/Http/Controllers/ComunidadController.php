@@ -23,7 +23,7 @@ class ComunidadController extends Controller
 
         return view('components.comunidad.create', compact('categs'));
     }
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
         $fileName = time().'.'.$request->file_image->extension();
         $request->file_image->move(public_path('images/posts/'), $fileName);
