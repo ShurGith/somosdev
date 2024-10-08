@@ -23,9 +23,10 @@ class ComunidadController extends Controller
         //
     }
 
-    public function show(string $id)
+    public function show(Post $post)
     {
-        //
+       // $post = Post::find($post);
+        return view('components.comunidad.show',['post' => $post]);
     }
     public function edit(string $id)
     {

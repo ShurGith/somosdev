@@ -30,6 +30,9 @@ class DatabaseSeeder extends Seeder
         DB::table('categories')->insert([
             'name' => 'PHP',
         ]);
+        DB::table('categories')->insert([
+            'name' => 'VSC',
+        ]);
 
         Post::factory()->create([
             'title' => 'My First Post',

@@ -17,6 +17,7 @@ Route::get('/prueba', function(){
 
 
 Route::get('/index', [ComunidadController::class,'index'])->name('comunidad.index');
+Route::get('/show/{post}',[ComunidadController::class, 'show'])->name('comunidad.show');
 
 
 Route::middleware([

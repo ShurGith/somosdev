@@ -19,7 +19,16 @@
     </div>
 
 </main>
+<section>
+    <x-comunidad.block-posts :posts='$posts'/>
+</section>
 <section id="loginform" class="mt-96 pb-96">
     <x-comunidad.loginform />
+</section>
+<section>
+    <x-comunidad.integraciones />
+</section>
+<section class="w-3/4 mx-auto border p-24 bg-slate-200 overflow-hidden">
+    <x-comunidad.integ-slider />
 </section>
 </x-guest-layout>

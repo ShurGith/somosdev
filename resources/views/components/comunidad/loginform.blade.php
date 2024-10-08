@@ -52,7 +52,6 @@
     document.addEventListener('DOMContentLoaded', ()=>{
   const aviso =  document.querySelector('#avisoLogin'),
   botones = document.querySelectorAll('.cursor-not-allowed')
-console.log(aviso, botones);
 
   botones.forEach(boton => {
     boton.addEventListener('mouseover', () => {

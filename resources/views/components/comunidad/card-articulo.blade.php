@@ -4,8 +4,13 @@
         [
             'ico'=>'ti-brand-laravel',
             'color'=>'bg-orange-500',
-        ], [
+        ],
+        [
             'ico'=>'ti-file-type-php',
+            'color'=>'bg-blue-700',
+        ],
+        [
+            'ico'=>'ti-brand-vscode',
             'color'=>'bg-blue-500',
         ],
     ]
@@ -25,8 +30,8 @@
         @foreach ($post->categories as $cat)
             @php $user =  App\Models\User::find($cat->pivot->user_id);  @endphp
 
-            <div class="{{ $dts[$cat->id -1]['color']}} max-w-max rounded px-4 py-1 text-sm text-slate-800 m-6">
-                <i class="ti {{ $dts[$cat->id -1]['ico'] }}"></i> {{  $cat->name }}
+            <div class="{{ $dts[$cat->id -1]['color']}} w-12 h-12 rounded-full flex items-center justify-center text-sm text-white/70 gap-2 m-6">
+                <i class="text-2xl ti {{ $dts[$cat->id -1]['ico'] }}"></i>
             </div>
             <div class="flex items-center  flex-col text-sm text-slate-500">Autor:
                 <img  class="w-18 border-4 rounded-full "src="{{ asset('images/'.$user->profile_photo_path) }}">
