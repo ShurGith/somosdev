@@ -8,7 +8,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::get('/', [ComunidadController::class,'index'])->name('comunidad.index');
+
+Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/comunidad', [ComunidadController::class,'index'])->name('comunidad.index');
+Route::get('/home', [ComunidadController::class,'home'])->name('pagina.home');
+
+
 
 Route::get('/prueba', function(){
 
@@ -28,7 +36,7 @@ Route::get('/create',[ComunidadController::class, 'create'])->name('comunidad.cr
 Route::post('/store', [ComunidadController::class, 'store'])->name('comunidad.store');
 
 
-    Route::get('/dashboard', function () {
+Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });

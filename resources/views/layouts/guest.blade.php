@@ -19,7 +19,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/css/css.css', 'resources/js/app.js'])
 
-        <!-- Styles --
+        <!-- Styles -->
         @livewireStyles
     </head>
     <body>

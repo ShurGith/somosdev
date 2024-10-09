@@ -15,7 +15,16 @@ class ComunidadController extends Controller
     {
        $posts = Post::all();
        return view('components.comunidad.index',compact('posts'));
+
     }
+
+    public function home()
+    {
+       $posts = Post::all();
+        $pagina = "home";
+        return view('home',compact('posts', 'pagina'));
+    }
+
 
     public function create()
     {
