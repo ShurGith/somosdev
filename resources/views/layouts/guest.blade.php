@@ -17,9 +17,9 @@
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+        @vite(['resources/css/app.css', 'resources/css/css.css', 'resources/js/app.js'])
 
-        <!-- Styles -->
+        <!-- Styles --
         @livewireStyles
     </head>
     <body>

@@ -18,6 +18,22 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors:{
+                'verdec': {
+                    '50': '#f2f7f3',
+                    '100': '#e0ebe1',
+                    '200': '#c3d7c6',
+                    '300': '#9abba1',
+                    '400': '#84a98d',
+                    '500': '#4d7c5a',
+                    '600': '#3a6146',
+                    '700': '#2e4e38',
+                    '800': '#263f2e',
+                    '900': '#203427',
+                    '950': '#111d15',
+    },
+
+            }
         },
     },
 

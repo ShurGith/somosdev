@@ -5,3 +5,8 @@
 [x-cloak] {
     display: none;
 }
+@layer components{
+    .block-card{
+        @apply w-full min-h-[230px] flex-col justify-between items-center inline-flex border border-gray-200 rounded shadow-[0px_1px_2px_0px_rgba(16,_24,_40,_0.05)];
+    }
+}

@@ -19,7 +19,7 @@
     </div>
 
 </main>
-<section>
+<section class="w-5/6 mx-auto">
     <x-comunidad.block-posts :posts='$posts'/>
 </section>
 <section id="loginform" class="mt-96 pb-96">
