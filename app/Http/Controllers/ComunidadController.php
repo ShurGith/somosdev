@@ -24,6 +24,10 @@ class ComunidadController extends Controller
         $pagina = "home";
         return view('home',compact('posts', 'pagina'));
     }
+    public function team()
+    {
+        return view('home', ['pagina'=>'team']);
+    }
 
 
     public function create()

@@ -43,7 +43,7 @@
                                     $num = $cat->id -1;
                                     $color = $dts[$num]['base-color'];
                                 @endphp
-                                <i class="rounded-full border {{ 'border-'.$color}} } p-2 {{ 'text-'.$color}} }} font-thin text-4xl ti {{ $dts[$num]['ico'] }}"></i>
+                                <i class=" p-2 {{ 'text-'.$color}} }} font-thin text-2xl ti {{ $dts[$num]['ico'] }}"></i>
                             @endforeach
                             <a href="{{ route('comunidad.show', $post->id) }}">
                                 <h4 class="text-gray-900 text-lg font-medium leading-8">{{ $post->title }}</h4>

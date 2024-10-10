@@ -32,4 +32,14 @@
         allowTouchMove: false,
         disableOnInteraction: true
     });
+
+document.getElementById('user-menu-button').addEventListener('click',()=>{
+   if(document.getElementById('user-menu').classList.contains('scale-y-0')){
+       document.getElementById('user-menu').classList.remove('scale-y-0','ease-out', 'duration-300')
+       document.getElementById('user-menu').classList.add('scale-y-100','ease-in', 'duration-300')
+   }else{
+       document.getElementById('user-menu').classList.add('scale-y-0','ease-out', 'duration-300')
+       document.getElementById('user-menu').classList.remove('scale-y-100','ease-in', 'duration-300')
+   }
+})
 </script>

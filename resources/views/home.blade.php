@@ -3,6 +3,7 @@
     'notaContent' => "Effectively recruit and oversee talent on a global scale  with confidence | Begin at no cost",
     'pagActual'=> $pagina ?? "Sin título",
     'pasada' => $pagina,
+    'active' => false,//Enlaces nav
     ])
 <x-pagina.html :pagActual='ucfirst($pagina)'/>
 <body>

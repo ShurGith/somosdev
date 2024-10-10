@@ -9,12 +9,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('home');
-});
 
 Route::get('/comunidad', [ComunidadController::class,'index'])->name('comunidad.index');
 Route::get('/home', [ComunidadController::class,'home'])->name('pagina.home');
+Route::get('/team', [ComunidadController::class,'team'])->name('pagina.team');
+Route::get('/', [ComunidadController::class,'home'])->name('pagina.home');
 
 
 
