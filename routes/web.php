@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/comunidad', [ComunidadController::class,'index'])->name('comunidad.index');
 Route::get('/home', [ComunidadController::class,'home'])->name('pagina.home');
 Route::get('/team', [ComunidadController::class,'team'])->name('pagina.team');
+Route::get('/categs', [ComunidadController::class,'categs'])->name('pagina.categs');
+Route::get('/aboutus', [ComunidadController::class,'aboutus'])->name('pagina.aboutus');
 Route::get('/', [ComunidadController::class,'home'])->name('pagina.home');
 
 
@@ -27,15 +29,15 @@ Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
-])->group(function () {
+    ])->group(function () {
 
-Route::get('/index', [ComunidadController::class,'index'])->name('comunidad.index');
-Route::get('/show/{post}',[ComunidadController::class, 'show'])->name('comunidad.show');
-Route::get('/create',[ComunidadController::class, 'create'])->name('comunidad.create');
-Route::post('/store', [ComunidadController::class, 'store'])->name('comunidad.store');
+        Route::get('/index', [ComunidadController::class,'index'])->name('comunidad.index');
+        Route::get('/show/{post}',[ComunidadController::class, 'show'])->name('comunidad.show');
+        Route::get('/create',[ComunidadController::class, 'create'])->name('comunidad.create');
+        Route::post('/store', [ComunidadController::class, 'store'])->name('comunidad.store');
 
 
-Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        Route::get('/dashboard', function () {
+                return view('dashboard');
+            })->name('dashboard');
 });

@@ -9,6 +9,8 @@ use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -16,14 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->withPersonalTeam()->create();
+         User::factory(10)->withPersonalTeam()->create();
 
-        // User::factory()->withPersonalTeam()->create([
-        //     'name' => 'Susan',
-        //     'email' => 'susan@example.com',
-        //     'password'=> 123456,
-        // ]);
-/*
+        User::factory()->withPersonalTeam()->create([
+            'name' => 'Susan',
+            'email' => 'susan@example.com',
+            'password'=> Hash::make(123456),
+        ]);
+
         DB::table('categories')->insert([
             'name' => 'Laravel',
         ]);
@@ -37,15 +39,18 @@ class DatabaseSeeder extends Seeder
         Post::factory()->create([
             'title' => 'My First Post',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nunc, vitae aliquam nunc nisl sit amet nunc. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nunc, vitae aliquam nunc nisl sit amet nunc.',
+            'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 
         ]);
         Post::factory()->create([
             'title' => 'My Second Post',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nunc, vitae aliquam nunc nisl sit amet nunc. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nunc, vitae aliquam nunc nisl sit amet nunc.',
+            'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing',
         ]);
         Post::factory()->create([
             'title' => 'My Third Post',
             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nunc, vitae aliquam nunc nisl sit amet nunc. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquet nunc, vitae aliquam nunc nisl sit amet nunc.',
+            'excerpt' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl alique nunc.',
         ]);
 
         DB::table('category_post')->insert([
@@ -63,6 +68,6 @@ class DatabaseSeeder extends Seeder
         'post_id' => 3 ,
         'user_id' => 1
         ]);
-*/
+
     }
 }

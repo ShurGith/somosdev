@@ -15,27 +15,53 @@ class ComunidadController extends Controller
     {
        $posts = Post::all();
        return view('components.comunidad.index',compact('posts'));
-
     }
-
-    public function home()
+    public function aboutus()
     {
        $posts = Post::all();
-        $pagina = "home";
-        return view('home',compact('posts', 'pagina'));
-    }
-    public function team()
-    {
-        return view('home', ['pagina'=>'team']);
+       return view('home',
+                  ['pagina' => 'About us',
+                  'grupo' => 'aboutus',
+                   'datos' => $posts]);
     }
 
+    public function home(Request $request)
+    {
+        $pagina = "home";
+        $grupo = $pagina;
+        $datos = Post::all();
+        $filterPosts = Post::where('is_published', true)
+            ->orderByDesc('created_at')
+            ->limit(3)
+            ->get();
+
+         return view('home',compact('datos', 'pagina', 'grupo','filterPosts'));
+    }
+
+    public function categs()
+    {
+        $categs = Category::get();//Post::where('is_published', true)->get();
+        return view('home',
+                    ['pagina' => 'Categs',
+                    'grupo'=>'categs',
+                    'datos' => $categs]);
+    }
+
+    public function team()
+    {
+        $posts = Post::all();
+        return view('home',
+                    ['pagina'=>'Team',
+                    'grupo'=>'team',
+                    'datos'=>$posts]);
+    }
 
     public function create()
     {
         $categs = Category::all();
-
         return view('components.comunidad.create', compact('categs'));
     }
+
     public function store(PostRequest $request)
     {
         $fileName = time().'.'.$request->file_image->extension();

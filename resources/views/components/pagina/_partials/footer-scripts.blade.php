@@ -1,5 +1,5 @@
 
-{{-- @livewireScripts --}}
+ @livewireScripts
 
 <script src="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/js/pagedone.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -32,14 +32,15 @@
         allowTouchMove: false,
         disableOnInteraction: true
     });
-
-document.getElementById('user-menu-button').addEventListener('click',()=>{
-   if(document.getElementById('user-menu').classList.contains('scale-y-0')){
-       document.getElementById('user-menu').classList.remove('scale-y-0','ease-out', 'duration-300')
-       document.getElementById('user-menu').classList.add('scale-y-100','ease-in', 'duration-300')
-   }else{
-       document.getElementById('user-menu').classList.add('scale-y-0','ease-out', 'duration-300')
-       document.getElementById('user-menu').classList.remove('scale-y-100','ease-in', 'duration-300')
-   }
-})
+    const objeto = document.getElementById('user-menu')
+    document.getElementById('user-menu-button').addEventListener('click',()=>{
+        const claseLista = objeto.classList
+        if(claseLista.contains('scale-y-0')){
+            objeto.classList.remove('scale-y-0','ease-out')
+            objeto.classList.add('scale-y-100','ease-in')
+        }else{
+            objeto.classList.add('scale-y-0','ease-out')
+            objeto.classList.remove('scale-y-100','ease-in')
+        }
+    })
 </script>

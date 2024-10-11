@@ -13,8 +13,9 @@
               <div class="ml-10 flex items-baseline space-x-4">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <x-pagina._partials.nav-link href="{{ route('pagina.home') }}"  :active="request()->is('/')">{{ __('Home') }}</x-nav-link>
+                <x-pagina._partials.nav-link href="{{ route('pagina.categs') }}"  :active="request()->is('categs')">{{ __('Categs') }}</x-nav-link>
                 <x-pagina._partials.nav-link href="{{ route('pagina.team') }}"  :active="request()->is('team')">{{ __('Team') }}</x-nav-link>
-                <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">{{ __('About us') }}</a>
+                <x-pagina._partials.nav-link href="{{ route('pagina.aboutus') }}"  :active="request()->is('aboutus')">{{ __('About us') }}</x-nav-link>
                 <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">{{ __('Calendar') }}</a>
                 <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">{{ __('Reports') }}</a>
               </div>
@@ -52,8 +53,8 @@
                 -->
                 <div id="user-menu" class="origin-top transition transform scale-y-0 absolute right-0 z-10 mt-2 w-48  rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                   <!-- Active: "bg-gray-100", Not Active: "" -->
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">{{ __('Profile') }}</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">{{ __('Settings') }}</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 duration-400" role="menuitem" tabindex="-1" id="user-menu-item-0">{{ __('Profile') }}</a>
+                  <a href="#" class="block px-4 py-2 text-sm text-gray-700 duration-400" role="menuitem" tabindex="-1" id="user-menu-item-1">{{ __('Settings') }}</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">{{ __('Sign Out') }}</a>
                 </div>
               </div>
