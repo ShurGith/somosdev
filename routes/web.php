@@ -14,7 +14,10 @@ Route::get('/comunidad', [ComunidadController::class,'index'])->name('comunidad.
 Route::get('/home', [ComunidadController::class,'home'])->name('pagina.home');
 Route::get('/team', [ComunidadController::class,'team'])->name('pagina.team');
 Route::get('/categs', [ComunidadController::class,'categs'])->name('pagina.categs');
+Route::get('/category/{id}', [ComunidadController::class,'category_simple'])->name('pagina.category');
 Route::get('/aboutus', [ComunidadController::class,'aboutus'])->name('pagina.aboutus');
+Route::get('/show/{post}', [ComunidadController::class,'show'])->name('pagina.show');
+//Route::get('/show/{post}',[ComunidadController::class, 'show'])->name('pagina.show');
 Route::get('/', [ComunidadController::class,'home'])->name('pagina.home');
 
 
@@ -31,8 +34,8 @@ Route::middleware([
     'verified',
     ])->group(function () {
 
-        Route::get('/index', [ComunidadController::class,'index'])->name('comunidad.index');
-        Route::get('/show/{post}',[ComunidadController::class, 'show'])->name('comunidad.show');
+     //   Route::get('/index', [ComunidadController::class,'index'])->name('comunidad.index');
+        //Route::get('/show/{post}',[ComunidadController::class, 'show'])->name('comunidad.show');
         Route::get('/create',[ComunidadController::class, 'create'])->name('comunidad.create');
         Route::post('/store', [ComunidadController::class, 'store'])->name('comunidad.store');
 

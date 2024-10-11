@@ -14,6 +14,11 @@ return new class extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('logo')->nullable;
+            $table->string('ico')->nullable;
+            $table->string('logo_color');
+            $table->string('primary_color');
+            $table->string('secondary_color');
             $table->timestamps();
         });
     }

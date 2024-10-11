@@ -18,11 +18,11 @@ class ComunidadController extends Controller
     }
     public function aboutus()
     {
-       $posts = Post::all();
-       return view('home',
-                  ['pagina' => 'About us',
-                  'grupo' => 'aboutus',
-                   'datos' => $posts]);
+        $posts = Post::all();
+        return view('home',
+                    ['pagina' => 'About us',
+                    'grupo' => 'aboutus',
+                    'datos' => $posts]);
     }
 
     public function home(Request $request)
@@ -35,7 +35,7 @@ class ComunidadController extends Controller
             ->limit(3)
             ->get();
 
-         return view('home',compact('datos', 'pagina', 'grupo','filterPosts'));
+        return view('home',compact('datos', 'pagina', 'grupo','filterPosts'));
     }
 
     public function categs()
@@ -45,6 +45,18 @@ class ComunidadController extends Controller
                     ['pagina' => 'Categs',
                     'grupo'=>'categs',
                     'datos' => $categs]);
+    }
+
+    public function category_simple($id)
+    {
+        $categ = Category::find($id);
+        $posts = $categ->posts;
+        return view('home',
+                    ['pagina' => 'Categ',
+                    'grupo'=>'category',
+                    'titulo' => true,
+                    'datos' => $categ,
+                    'posts' => $posts]);
     }
 
     public function team()
@@ -83,7 +95,12 @@ class ComunidadController extends Controller
 
     public function show(Post $post)
     {
-        return view('components.comunidad.show',['post' => $post]);
+      //  $post = Post::find(3)->get();
+        return view('home',
+                    ['pagina'=>'show',
+                    'grupo'=>'show',
+                    'datos'=>$post]);
+       // return view('components.comunidad.show',['post' => $post]);
     }
     public function edit(string $id)
     {

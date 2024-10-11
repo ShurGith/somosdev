@@ -45,13 +45,13 @@
                                 @endphp
                                 <i class=" p-2 {{ 'text-'.$color}} }} font-thin text-2xl ti {{ $dts[$num]['ico'] }}"></i>
                             @endforeach
-                            <a href="{{ route('comunidad.show', $post->id) }}">
+                            <a href="{{ route('pagina.show', $post->id) }}">
                                 <h4 class="text-gray-900 text-lg font-medium leading-8">{{ $post->title }}</h4>
                             </a>
                         </div>
                         <p class="mt-2 text-gray-400 text-xs font-normal leading-5 min-h-[125px]">{!! Str::limit($post->excerpt,$exc_limite,' ( ...Mas)') !!}</p>
                     </div>
-                    <a  class="text-blue-700 py-2 bg-verdec-300 font-bold w-full text-center" href="{{ route('comunidad.show', $post->id) }}">
+                    <a  class="text-blue-700 py-2 bg-verdec-300 font-bold w-full text-center" href="{{ route('pagina.show', $post->id) }}">
                         {{ __('Ver Mas') }}
                     </a>
             </div>
