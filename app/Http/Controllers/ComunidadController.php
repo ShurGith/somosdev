@@ -78,7 +78,7 @@ class ComunidadController extends Controller
     {
         $fileName = time().'.'.$request->file_image->extension();
         $request->file_image->move(public_path('images/posts/'), $fileName);
-       $post = Post::create([
+        $post = Post::create([
             'title' => $request->titulo,
             'excerpt' => $request->excerpt,
             'image'=> $fileName,
