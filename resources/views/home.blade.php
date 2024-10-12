@@ -4,35 +4,6 @@
     'grupo' => $grupo ?? "post",
     'active' => false,//Enlaces nav,
     'post_default_image' => 'default_image.png',
-
-    'i' => 0,
-    // 'dts' =>[
-    //     [
-    //         'ico'=>'ti-brand-laravel',
-    //         'logo-img'=>'laravel-logo.svg',
-    //         'base-color' => 'orange-500',
-    //         'bg-color'=>'bg-orange-500',
-    //         'txt-color'=>'text-orange-500',
-    //         'bdr-color'=>'border-orange-500',
-    //     ],
-    //     [
-    //         'ico'=>'ti-file-type-php',
-    //         'logo-img'=>'laravel-logo.svg',
-    //         'base-color' => 'blue-500',
-    //         'bg-color'=>'bg-blue-700',
-    //         'txt-color'=>'text-blue-700',
-    //         'bdr-color'=>'border-blue-500',
-    //     ],
-    //     [
-    //         'ico'=>'ti-brand-vscode',
-    //         'logo-img'=>'vsc-logo.svg',
-    //         'base-color' => 'blue-500',
-    //         'bg-color'=>'bg-blue-500',
-    //         'txt-color'=>'text-blue-500',
-    //         'bdr-color'=>'border-blue-500',
-    //     ],
-
-    // ]
 ])
 <x-pagina.html :pagActual='ucfirst($pagina)'/>
 <body>
