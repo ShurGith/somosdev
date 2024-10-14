@@ -14,7 +14,7 @@ class ComunidadController extends Controller
     public function index()
     {
        $posts = Post::all();
-       return view('components.comunidad.index',compact('posts'));
+       return view('components.comunidad.index',compact('posts', 'posts_lasts'));
     }
     public function aboutus()
     {
@@ -30,12 +30,14 @@ class ComunidadController extends Controller
         $pagina = "home";
         $grupo = $pagina;
         $datos = Post::all();
+        $datos = Post::all();
+        $posts_lasts = Post::orderBy('created_at', 'desc')->take(6)->get();
         $filterPosts = Post::where('is_published', true)
             ->orderByDesc('created_at')
             ->limit(3)
             ->get();
 
-        return view('home',compact('datos', 'pagina', 'grupo','filterPosts'));
+        return view('home',compact('datos', 'pagina', 'grupo','filterPosts', 'posts_lasts'));
     }
 
     public function categs()

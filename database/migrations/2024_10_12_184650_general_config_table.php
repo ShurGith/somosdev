@@ -17,6 +17,8 @@ return new class extends Migration
             $table->boolean('show_userName');//En show.blade
             $table->boolean('show_headerMenssage');
             $table->string('headerMenssage');
+            $table->string('default_image_post');
+            $table->string('default_profile_image');
             //$table->timestamps();
         });
     }
