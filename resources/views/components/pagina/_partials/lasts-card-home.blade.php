@@ -6,10 +6,7 @@
     </div>
     <div class="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         @foreach ($datos as $post)
-            @php
-                $imagen = ($post->image != NULL) ? $post->image : 'default_image.png';
-            @endphp
-        <article class="article-last relative isolate flex flex-col justify-end items-center overflow-hidden rounded-2xl bg-gray-900 px-8 bg-cover min-h-64 bg-center" style="background-image:url({{ asset('images/posts/'.$imagen) }})">
+        <article class="article-last relative isolate flex flex-col justify-end items-center overflow-hidden rounded-2xl bg-gray-900 px-8 bg-cover min-h-64 bg-center" style="background-image:url({{ asset('images/posts/'.$post->image) }})">
             {{-- <img src="{{ asset('images/posts/'.$imagen) }}" alt="{{ $post->title }}" class="absolute inset-0 -z-10 h-full w-full object-cover"> --}}
             <div class="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
             <div class="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>

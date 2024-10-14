@@ -9,11 +9,8 @@
                 <span>{{ $post->created_at->format('d - M') }}</span>
                 </time>
             </div>
-                @php
-                $imagen = ($post->image != NULL) ? $post->image : 'default_image.png';
-                @endphp
                 {{-- <img alt="{{ $post->title }}" src="{{ asset('images/posts/'.$imagen)}}" class="aspect-square object-cover" /> --}}
-            <div class="col-span-4 items-center flex justify-center bg-cover bg-center" style="background-image:url({{ asset('images/posts/'.$imagen)}}">
+            <div class="col-span-4 items-center flex justify-center bg-cover bg-center" style="background-image:url({{ asset('images/posts/'.$post->image)}}">
             </div>
             <div class="flex flex-1 flex-col col-span-7 justify-between">
                 <div class="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
@@ -41,3 +38,5 @@
         </article>
     @endforeach
     </div>
+
+

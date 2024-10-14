@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->text('content');
             $table->string('excerpt');
-            $table->string('image')->nullable();
+            $table->string('image')->default('default_image.png');
             $table->boolean('is_published')->default(false);
             $table->timestamps();
         });

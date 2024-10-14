@@ -30,19 +30,25 @@ class ComunidadController extends Controller
         $pagina = "home";
         $grupo = $pagina;
         $datos = Post::all();
-        $datos = Post::all();
+        $random_posts = Post::where('is_published', true)
+        ->inRandomOrder()
+        ->limit(6)
+        ->get();
         $posts_lasts = Post::orderBy('created_at', 'desc')->take(6)->get();
-        $filterPosts = Post::where('is_published', true)
+        /*$filterPosts = Post::where('is_published', true)
             ->orderByDesc('created_at')
             ->limit(3)
-            ->get();
-
-        return view('home',compact('datos', 'pagina', 'grupo','filterPosts', 'posts_lasts'));
+            ->get();*/
+        if ($request->wantsJson()) {
+            return $random_posts;
+        }else{
+            return view('home',compact('datos', 'pagina', 'grupo', 'posts_lasts', 'random_posts'));
+        }
     }
 
     public function categs()
     {
-        $categs = Category::get();//Post::where('is_published', true)->get();
+        $categs = Category::get();
         return view('home',
                     ['pagina' => 'Categs',
                     'grupo'=>'categs',
@@ -97,12 +103,10 @@ class ComunidadController extends Controller
 
     public function show(Post $post)
     {
-      //  $post = Post::find(3)->get();
         return view('home',
                     ['pagina'=>'show',
                     'grupo'=>'show',
                     'datos'=>$post]);
-       // return view('components.comunidad.show',['post' => $post]);
     }
     public function edit(string $id)
     {

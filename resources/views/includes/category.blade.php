@@ -26,12 +26,9 @@
     </div>
     @endif
     @foreach ($posts as $post)
-        @php
-            $imagen = ($post->image != NULL) ? $post->image : 'default_image.png';
-        @endphp
         <div class="relative">
             <div class="absolute w-full h-full top-0 left-0 border-2 border-black border-dashed rounded-lg"></div>
-            <div class="div-categ relative flex min-h-40 flex-col justify-between px-6 py-4 bg-white rounded-lg bg-center bg-no-repeat bg-cover shadow transition-all ease-in-out duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-xl hover:shadow-black" style="background-image:linear-gradient(to bottom,rgba(0, 0, 0,.7), {{ $datos->secondary_color }} ),url({{ asset('images/posts/'.$imagen) }}) ">
+            <div class="div-categ relative flex min-h-40 flex-col justify-between px-6 py-4 bg-white rounded-lg bg-center bg-no-repeat bg-cover shadow transition-all ease-in-out duration-500 hover:-translate-x-1 hover:-translate-y-1 hover:shadow-xl hover:shadow-black" style="background-image:linear-gradient(to bottom,rgba(0, 0, 0,.7), {{ $datos->secondary_color }} ),url({{ asset('images/posts/'.$post->image) }}) ">
                 <div>
                     <h3 class="font-bold text-white text-xl z-10">{{ $post->title }}</h3>
                     <p class=" mt-1 text-white text-sm z-10">{{ $post->excerpt }}</p>
