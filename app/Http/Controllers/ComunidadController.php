@@ -31,6 +31,7 @@ class ComunidadController extends Controller
         $grupo = $pagina;
         $datos = Post::all();
         $random_posts = Post::where('is_published', true)
+        ->with('categories')
         ->inRandomOrder()
         ->limit(6)
         ->get();

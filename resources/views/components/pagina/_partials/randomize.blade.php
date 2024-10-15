@@ -9,10 +9,12 @@
         <p>Datos</p>
         <template x-for="dato in randomPosts" :key="dato.id" >
             <div class="grid grid-cols-5">
-                <div x-text="dato.title"></div>
-                <template x-if="dato.image">
-                    <img :src="`/images/posts/${dato.image}`" :alt="`${dato.title} imagen`" class="w-24 h-24">
+                <template x-for="item in dato.categories">
+
+                    <div class="px-4 py-2 text-xs text-white rounded w-fit h-fit " x-text="item.name" :style="`background-color:${item.primary_color}`"></div>
                 </template>
+                <a x-text="dato.title" :href="`/show/${dato.id}`"></a>
+                <img :src="`/images/posts/${dato.image}`" :alt="`${dato.title} imagen`" class="w-24 h-24">
 
             </div>
         </template>
