@@ -11,13 +11,18 @@ class Post extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    public function categories():belongsToMany
-    {
-       return $this->belongsToMany(Category::class)->withPivot('user_id');
-    }
+
+    protected $casts = [
+        'created_at' => 'date:Y-s-M',
+    ];
+
     public function user():BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->BelongsTo(User::class, 'id');
+    }
+    public function categories():belongsToMany
+    {
+        return $this->belongsToMany(Category::class, 'category_post');
     }
 
 }

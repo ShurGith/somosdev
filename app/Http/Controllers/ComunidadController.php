@@ -31,11 +31,15 @@ class ComunidadController extends Controller
         $grupo = $pagina;
         $datos = Post::all();
         $random_posts = Post::where('is_published', true)
-        ->with('categories')
+        ->with(['categories', 'user'])
         ->inRandomOrder()
         ->limit(6)
         ->get();
-        $posts_lasts = Post::orderBy('created_at', 'desc')->take(6)->get();
+        $posts_lasts = Post::where('is_published', true)
+        ->with(['categories', 'user'])
+        ->orderBy('created_at', 'desc')
+        ->take(6)
+        ->get();
         /*$filterPosts = Post::where('is_published', true)
             ->orderByDesc('created_at')
             ->limit(3)
