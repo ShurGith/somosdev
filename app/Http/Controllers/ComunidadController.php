@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
-use App\Models\User;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
@@ -84,7 +83,7 @@ class ComunidadController extends Controller
     public function create()
     {
         $categs = Category::all();
-        return view('components.comunidad.create', compact('categs'));
+        return view('components.pagina.gestion.create', compact('categs'));
     }
 
     public function store(PostRequest $request)

@@ -36,7 +36,7 @@ Route::middleware([
 
      //   Route::get('/index', [ComunidadController::class,'index'])->name('comunidad.index');
         //Route::get('/show/{post}',[ComunidadController::class, 'show'])->name('comunidad.show');
-        Route::get('/create',[ComunidadController::class, 'create'])->name('comunidad.create');
+        Route::get('/create',[ComunidadController::class, 'create'])->name('post.create');
         Route::post('/store', [ComunidadController::class, 'store'])->name('comunidad.store');
 
 

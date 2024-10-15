@@ -1,5 +1,17 @@
+@props([
+    'nota' => true,
+    'notaContent' => "Effectively recruit and oversee talent on a global scale  with confidence | Begin at no cost",
+    'grupo' => $grupo ?? "post",
+    'active' => false,//Enlaces nav,
+    'pagina'=> false,
+])
+
 <x-guest-layout>
-    <header class="bg-stone-700 grid grid-cols-12 place-items-center">
+ <x-pagina._partials.nav  :nota="$nota" :notaContent="$notaContent" />
+@if(!isset($titulo))
+<x-pagina._partials.header :pagina='$pagina' />
+@endif
+    {{-- <header class="bg-stone-700 grid grid-cols-12 place-items-center">
         <div class="place-items-center col-span-3 py-4">
             <x-comunidad.logo />
         </div>
@@ -9,7 +21,7 @@
         <div class="flex  gap-4 col-span-3">
         <x-comunidad.accesos />
         </div>
-    </header>
+    </header> --}}
 
 <main class="mt-12 mb-12 w-3/4 mx-auto">
 <form method="POST" action="{{ route('comunidad.store') }}" enctype="multipart/form-data" class="w-3/4 border flex flex-col justify-center items-center">
