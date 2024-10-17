@@ -1,8 +1,8 @@
 <section>
     @foreach ($datos->categories as $cat)
     @php
-        $user =  App\Models\User::find($cat->pivot->user_id);
-        $suserPhoto = $user->profile_photo_path ?:'default.png'
+       // $user =  App\Models\User::find($cat->pivot->user_id);
+       // $suserPhoto = $user->profile_photo_path ?:'default.png'
     @endphp
     <div class="flex items-center gap-12">
         <div class="text-white max-w-fit rounded ease-linear duration-300 hover:shadow-lg shadow shadow-black" style="background-color: {{ $cat->primary_color }}">
@@ -12,8 +12,8 @@
             </a>
         </div>
         <div class="flex flex-col place-items-center">
-            <img class="rounded-full w-14" src="{{ asset('images/users/'. $suserPhoto )}}" >
-            <p class="text-sm text-gray-500">{{ $user->name }} </p>
+            <img class="rounded-full w-14" src="{{ asset('images/users/'. $datos->user->profile_photo_path )}}" >
+            <p class="text-sm text-gray-500">{{ $datos->user->name }} </p>
         </div>
     </div>
     @endforeach
@@ -32,7 +32,7 @@
         </div>
 
         <div class="lg:py-16">
-            <article class="text-red-600">
+            <article>
                 {!! $datos->content !!}
             </article>
         </div>
