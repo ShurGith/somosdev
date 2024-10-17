@@ -10,7 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+        <script src="https://cdn.tiny.cloud/1/yq5qkuyziba3ynno0m7me42ww1dfxguiyzq2drk3xualk4fa/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 

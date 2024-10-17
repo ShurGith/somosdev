@@ -13,7 +13,7 @@ class ComunidadController extends Controller
     public function index()
     {
        $posts = Post::all();
-       return view('components.comunidad.index',compact('posts', 'posts_lasts'));
+       return view('show',compact('posts', 'posts_lasts'));
     }
     public function aboutus()
     {
@@ -95,6 +95,8 @@ class ComunidadController extends Controller
             'excerpt' => $request->excerpt,
             'image'=> $fileName,
             'content' => $request->content,
+            'is_published' => 1,//$request->is_published,
+            'autor_id' =>  $request->user_id,
         ]);
 
         DB::table('category_post')->insert([
@@ -102,7 +104,10 @@ class ComunidadController extends Controller
             'category_id' => $request->category_id,
             'user_id' => $request->user_id,
         ]);
-        return redirect()->route('comunidad.index');
+
+        // return redirect()->action([ComunidadController::class, 'create']);
+        // return back()->withInput();
+        return redirect('/create')->with('status', 'Post Añadido Correctamente!');
     }
 
     public function show(Post $post)

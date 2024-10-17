@@ -17,8 +17,11 @@ return new class extends Migration
             $table->text('content');
             $table->string('excerpt');
             $table->string('image')->default('default_image.png');
-            $table->boolean('is_published')->default(false);
+            $table->boolean('is_published')->default(true);
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
