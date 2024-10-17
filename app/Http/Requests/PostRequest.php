@@ -19,7 +19,7 @@ class PostRequest extends FormRequest
     {
         return [
             'titulo' => 'required|min:25|max:200',
-            'excerpt' => 'required|min:100|max:500',
+            'excerpt' => 'required|min:75|max:250',
             'content' => 'required|min:100',
             'file_image'=> ['required',File::image()->max(5 * 1024)],
         ];
